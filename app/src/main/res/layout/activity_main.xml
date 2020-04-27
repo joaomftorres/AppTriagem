@@ -15,10 +15,8 @@
 
     <Button
         android:id="@+id/buttontriagem"
-
         android:layout_width="230dp"
         android:layout_height="45dp"
-
         android:layout_marginTop="340dp"
         android:background="@drawable/btnskin"
         android:hint="@string/buttontriagem"
@@ -37,10 +35,8 @@
 
     <Button
         android:id="@+id/buttonpacientes"
-
         android:layout_width="230dp"
         android:layout_height="45dp"
-
         android:layout_marginTop="407dp"
         android:background="@drawable/btnskin"
         android:onClick="buttonpacientes"
@@ -58,10 +54,8 @@
 
     <Button
         android:id="@+id/buttonestatisticas"
-
         android:layout_width="230dp"
         android:layout_height="45dp"
-
         android:layout_marginTop="476dp"
         android:background="@drawable/btnskin"
         android:shadowColor="#A8A8A8"

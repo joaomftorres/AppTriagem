@@ -8,4 +8,5 @@
     <string name="buttonconsultartriagem">Consultar Triagem</string>
     <string name="textViewPacientes">Pacientes</string>
     <string name="buttonestatisticas">Estatisticas</string>
+    <string name="textViewNovaTriagem">Nova Triagem</string>
 </resources>
