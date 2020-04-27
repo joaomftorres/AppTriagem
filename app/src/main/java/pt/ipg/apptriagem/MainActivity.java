@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,8 +14,19 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-       // btnskin = (Button) findViewById(R.id.btnskin)
     }
 
+    public void buttontriagem(View view) {
+
+        Intent intenttriagem = new Intent(this, ActivityTriagens.class);
+
+        startActivity(intenttriagem);
+    }
+
+    public void buttonpacientes (View view) {
+
+        Intent intentpacientes = new Intent(this, ActivityPacientes.class);
+
+        startActivity(intentpacientes);
+    }
 }

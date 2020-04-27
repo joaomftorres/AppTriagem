@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -20,6 +21,8 @@
 
         android:layout_marginTop="340dp"
         android:background="@drawable/btnskin"
+        android:hint="@string/buttontriagem"
+        android:onClick="buttontriagem"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
@@ -40,6 +43,7 @@
 
         android:layout_marginTop="407dp"
         android:background="@drawable/btnskin"
+        android:onClick="buttonpacientes"
         android:shadowColor="#A8A8A8"
         android:shadowDx="0"
         android:shadowDy="0"
