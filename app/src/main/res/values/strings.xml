@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">AppTriagem</string>
+    <string name="app_name">EasyScreening</string>
+    <string name="TextViewTitulo">App Triagem</string>
+    <string name="buttontriagem">Triagem</string>
+    <string name="buttonpacientes">Pacientes</string>
+    <string name="textViewPagTriagem">Triagens</string>
+    <string name="buttonnovatriagem">Nova Triagem</string>
+    <string name="buttonconsultartriagem">Consultar Triagem</string>
+    <string name="textViewPacientes">Pacientes</string>
+    <string name="buttonestatisticas">Estatisticas</string>
 </resources>
