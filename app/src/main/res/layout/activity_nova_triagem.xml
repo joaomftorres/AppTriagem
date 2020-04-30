@@ -4,30 +4,109 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/backgroudgradient"
     tools:context=".ActivityNovaTriagem">
 
-    <EditText
-        android:id="@+id/editText2"
+    <CheckBox
+        android:id="@+id/checkBoxDificuldadeRespiratoria"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="113dp"
-        android:layout_marginLeft="113dp"
-        android:layout_marginTop="114dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="275dp"
+        android:text="Dificuldade Respiratória"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxTossePersistente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="314dp"
+        android:checked="false"
+        android:text="Tosse Persistente"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
+        android:id="@+id/editTextNomeUtente"
+        android:layout_width="234dp"
+        android:layout_height="35dp"
+        android:backgroundTint="@android:color/black"
+        android:textCursorDrawable="@android:color/black"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="17dp"
+        android:ems="10"
+        android:hint="Insira o Nome do Utente"
+        android:inputType="textPersonName"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewDadosPessoais" />
+
+    <EditText
         android:id="@+id/editText3"
-        android:layout_width="94dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="208dp"
+        android:layout_width="50dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="4dp"
         android:ems="10"
         android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="207dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="4dp"
+        android:ems="10"
+        android:hint="Insira o Nº de Utente"
+        android:inputType="number"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNomeUtente" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="54dp"
+        android:layout_height="35dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="2dp"
+        android:ems="10"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/textViewFebre"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTossePersistente" />
+
+    <TextView
+        android:id="@+id/textViewNumeroUtente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="18dp"
+        android:text="@string/textViewNumeroUtente"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewNome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNome" />
+
+    <TextView
+        android:id="@+id/textViewNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginLeft="36dp"
+        android:layout_marginTop="108dp"
+        android:text="Nome"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -35,61 +114,64 @@
         android:id="@+id/textViewIdade"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="173dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginLeft="37dp"
+        android:layout_marginTop="18dp"
         android:text="Idade"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/textViewNumeroUtente"
+        app:layout_constraintHorizontal_bias="0.454"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewNumeroUtente" />
 
     <TextView
         android:id="@+id/textViewNovaTriagem"
-        android:layout_width="227dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="92dp"
-        android:layout_marginLeft="92dp"
-        android:layout_marginTop="34dp"
+        android:layout_width="235dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
         android:text="@string/textViewNovaTriagem"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="#050505"
+        android:textSize="36sp"
         app:fontFamily="sans-serif-black"
+        app:layout_constraintBottom_toTopOf="@+id/textViewDadosPessoais"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textViewNome"
+        android:id="@+id/textViewDadosPessoais"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="126dp"
-        android:text="Nome"
+        android:layout_marginTop="12dp"
+        android:text="Dados Pessoais"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewNovaTriagem" />
+
+    <TextView
+        android:id="@+id/textViewSintomas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="236dp"
+        android:text="Sintomas de COVID-19"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="194dp"
-        android:layout_height="37dp"
-        android:ems="10"
-        android:inputType="number"
-        tools:layout_editor_absoluteX="144dp"
-        tools:layout_editor_absoluteY="208dp" />
-
     <TextView
-        android:id="@+id/textViewNumeroUtente"
+        android:id="@+id/textViewFebre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/textViewNumeroUtente"
-        tools:layout_editor_absoluteX="200dp"
-        tools:layout_editor_absoluteY="173dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="125dp"
-        tools:layout_editor_absoluteY="296dp" />
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="10dp"
+        android:text="Febre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxTossePersistente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
