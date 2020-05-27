@@ -14,7 +14,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="275dp"
-        android:text="Dificuldade Respiratória"
+        android:text="@string/checkBoxDificuldadeRespiratoria"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -26,7 +26,40 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="314dp"
         android:checked="false"
-        android:text="Tosse Persistente"
+        android:text="@string/checkBoxTossePersistente"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxFebre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="356dp"
+        android:text="@string/checkBoxFebre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDoresMusculares"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="395dp"
+        android:text="@string/checkBoxDoresMusculares"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxDoresCabeça"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="434dp"
+        android:text="@string/checkBoxDoresCabeça"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -34,14 +67,14 @@
         android:id="@+id/editTextNomeUtente"
         android:layout_width="234dp"
         android:layout_height="35dp"
-        android:backgroundTint="@android:color/black"
-        android:textCursorDrawable="@android:color/black"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="17dp"
+        android:backgroundTint="@android:color/black"
         android:ems="10"
         android:hint="Insira o Nome do Utente"
         android:inputType="textPersonName"
+        android:textCursorDrawable="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDadosPessoais" />
@@ -72,18 +105,6 @@
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomeUtente" />
-
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="54dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="2dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/textViewFebre"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxTossePersistente" />
 
     <TextView
         android:id="@+id/textViewNumeroUtente"
@@ -157,21 +178,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="236dp"
-        android:text="Sintomas de COVID-19"
+        android:text="@string/textViewSintomas"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewFebre"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginTop="10dp"
-        android:text="Febre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBoxTossePersistente" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

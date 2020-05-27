@@ -10,4 +10,10 @@
     <string name="buttonestatisticas">Estatisticas</string>
     <string name="textViewNovaTriagem">Nova Triagem</string>
     <string name="textViewNumeroUtente">Nº Utente</string>
+    <string name="textViewSintomas">Sintomas Apresentados</string>
+    <string name="checkBoxDificuldadeRespiratoria">Dificuldade Respiratória</string>
+    <string name="checkBoxTossePersistente">Tosse Persistente</string>
+    <string name="checkBoxFebre">Febres Acima dos 38ºC</string>
+    <string name="checkBoxDoresMusculares">Dores Musculares</string>
+    <string name="checkBoxDoresCabeça">Dores de Cabeça</string>
 </resources>
