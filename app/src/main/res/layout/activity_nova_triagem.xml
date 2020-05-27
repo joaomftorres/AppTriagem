@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,8 +29,8 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="314dp"
-        android:checked="false"
         android:buttonTint="@android:color/black"
+        android:checked="false"
         android:text="@string/checkBoxTossePersistente"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -73,7 +72,53 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
+    <CheckBox
+        android:id="@+id/checkBoxTremores"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="472dp"
+        android:buttonTint="@android:color/black"
+        android:text="@string/checkBoxTremores"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <CheckBox
+        android:id="@+id/checkBoxArrepios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="508dp"
+        android:buttonTint="@android:color/black"
+        android:text="@string/checkBoxArrepios"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxGarganta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="546dp"
+        android:buttonTint="@android:color/black"
+        android:text="@string/checkBoxGarganta"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/checkBoxOlfato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="584dp"
+        android:text="@string/checkBoxOlfato"
+        android:buttonTint="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextNomeUtente"
@@ -83,10 +128,10 @@
         android:layout_marginLeft="100dp"
         android:layout_marginTop="17dp"
         android:backgroundTint="@android:color/black"
-        android:textCursorDrawable="@null"
         android:ems="10"
         android:hint="Insira o Nome do Utente"
         android:inputType="textPersonName"
+        android:textCursorDrawable="@null"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDadosPessoais" />
@@ -99,10 +144,10 @@
         android:layout_marginLeft="100dp"
         android:layout_marginTop="4dp"
         android:backgroundTint="@android:color/black"
-        android:textCursorDrawable="@null"
         android:ems="10"
         android:hint="@string/editTextIdade"
         android:inputType="number"
+        android:textCursorDrawable="@null"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumeroUtente" />
@@ -115,10 +160,10 @@
         android:layout_marginLeft="100dp"
         android:layout_marginTop="4dp"
         android:backgroundTint="@android:color/black"
-        android:textCursorDrawable="@null"
         android:ems="10"
         android:hint="@string/textViewNumeroUtente"
         android:inputType="number"
+        android:textCursorDrawable="@null"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextNomeUtente" />
@@ -142,7 +187,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
-        android:layout_marginTop="108dp"
+        android:layout_marginTop="118dp"
         android:text="@string/textViewNome"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -201,4 +246,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

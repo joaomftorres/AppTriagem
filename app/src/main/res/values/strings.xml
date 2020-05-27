@@ -21,4 +21,8 @@
     <string name="textViewNome">Nome</string>
     <string name="textViewIdade">Idade</string>
     <string name="textViewDadosPessoais">Dados Pessoais</string>
+    <string name="checkBoxTremores">Tremores</string>
+    <string name="checkBoxArrepios">Arrepios</string>
+    <string name="checkBoxGarganta">Inflamação da Garganta</string>
+    <string name="checkBoxOlfato">Perda de Olfato ou Paladar</string>
 </resources>
