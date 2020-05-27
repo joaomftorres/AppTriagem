@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/backgroudgradient"
     tools:context=".ActivityNovaTriagem">
+
 
     <CheckBox
         android:id="@+id/checkBoxDificuldadeRespiratoria"
@@ -14,6 +18,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="275dp"
+        android:buttonTint="@android:color/black"
         android:text="@string/checkBoxDificuldadeRespiratoria"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -26,6 +31,7 @@
         android:layout_marginLeft="25dp"
         android:layout_marginTop="314dp"
         android:checked="false"
+        android:buttonTint="@android:color/black"
         android:text="@string/checkBoxTossePersistente"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +43,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="356dp"
+        android:buttonTint="@android:color/black"
         android:text="@string/checkBoxFebre"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -48,6 +55,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="395dp"
+        android:buttonTint="@android:color/black"
         android:text="@string/checkBoxDoresMusculares"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -59,9 +67,13 @@
         android:layout_marginStart="25dp"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="434dp"
+        android:buttonTint="@android:color/black"
         android:text="@string/checkBoxDoresCabeça"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+
+
 
     <EditText
         android:id="@+id/editTextNomeUtente"
@@ -71,36 +83,41 @@
         android:layout_marginLeft="100dp"
         android:layout_marginTop="17dp"
         android:backgroundTint="@android:color/black"
+        android:textCursorDrawable="@null"
         android:ems="10"
         android:hint="Insira o Nome do Utente"
         android:inputType="textPersonName"
-        android:textCursorDrawable="@android:color/black"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textViewDadosPessoais" />
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editTextIdade"
         android:layout_width="50dp"
         android:layout_height="35dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="4dp"
+        android:backgroundTint="@android:color/black"
+        android:textCursorDrawable="@null"
         android:ems="10"
+        android:hint="@string/editTextIdade"
         android:inputType="number"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText" />
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumeroUtente" />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextNumeroUtente"
         android:layout_width="207dp"
         android:layout_height="35dp"
         android:layout_marginStart="100dp"
         android:layout_marginLeft="100dp"
         android:layout_marginTop="4dp"
+        android:backgroundTint="@android:color/black"
+        android:textCursorDrawable="@null"
         android:ems="10"
-        android:hint="Insira o Nº de Utente"
+        android:hint="@string/textViewNumeroUtente"
         android:inputType="number"
         android:textSize="14sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -126,7 +143,7 @@
         android:layout_marginStart="36dp"
         android:layout_marginLeft="36dp"
         android:layout_marginTop="108dp"
-        android:text="Nome"
+        android:text="@string/textViewNome"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -138,7 +155,7 @@
         android:layout_marginStart="37dp"
         android:layout_marginLeft="37dp"
         android:layout_marginTop="18dp"
-        android:text="Idade"
+        android:text="@string/textViewIdade"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="@+id/textViewNumeroUtente"
         app:layout_constraintHorizontal_bias="0.454"
@@ -147,8 +164,8 @@
 
     <TextView
         android:id="@+id/textViewNovaTriagem"
-        android:layout_width="235dp"
-        android:layout_height="41dp"
+        android:layout_width="237dp"
+        android:layout_height="50dp"
         android:layout_marginTop="15dp"
         android:gravity="center"
         android:text="@string/textViewNovaTriagem"
@@ -167,7 +184,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Dados Pessoais"
+        android:text="@string/textViewDadosPessoais"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -184,4 +201,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

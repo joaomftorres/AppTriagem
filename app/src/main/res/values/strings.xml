@@ -16,4 +16,9 @@
     <string name="checkBoxFebre">Febres Acima dos 38ºC</string>
     <string name="checkBoxDoresMusculares">Dores Musculares</string>
     <string name="checkBoxDoresCabeça">Dores de Cabeça</string>
+    <string name="editTextNumeroUtente">Insira o Numero do Utente</string>
+    <string name="editTextIdade">Idade</string>
+    <string name="textViewNome">Nome</string>
+    <string name="textViewIdade">Idade</string>
+    <string name="textViewDadosPessoais">Dados Pessoais</string>
 </resources>
