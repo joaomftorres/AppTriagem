@@ -25,4 +25,7 @@
     <string name="checkBoxArrepios">Arrepios</string>
     <string name="checkBoxGarganta">Inflamação da Garganta</string>
     <string name="checkBoxOlfato">Perda de Olfato ou Paladar</string>
+    <string name="buttonSubmeterTriagem">Submeter Triagem</string>
+    <string name="textViewDados">Dados dos Pacientes</string>
+
 </resources>

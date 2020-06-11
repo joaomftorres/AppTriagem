@@ -6,14 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".ActivityPacientes">
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="194dp"
-        android:layout_height="317dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/imgpacientes"
-        tools:layout_editor_absoluteY="-37dp" />
-
+    <TextView
+        android:id="@+id/textViewDados"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/textViewDados"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="49dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
