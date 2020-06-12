@@ -30,6 +30,36 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         String numero_utente = editTextNumeroUtente.getText().toString().trim();
         String idade = editTextIdade.getText().toString().trim();
 
+        if (nome.length() == 0) {
+            editTextNomeUtente.setError("Erro: É necessário inserir o Nome do Utente");
+            editTextNomeUtente.requestFocus();
+            return;
+        }
+
+        if (numero_utente.length() != 9) {
+            editTextNumeroUtente.setError("Erro: O Numero de Utente deve ser contituido por 9 digitos");
+            editTextNumeroUtente.requestFocus();
+            return;
+        }
+
+
+        if (idade.length() == 0) {
+            editTextIdade.setError("Erro: Introduza a Idade");
+            editTextIdade.requestFocus();
+            return;
+        }
+
+        int idd;
+        idd = Integer.parseInt(idade);
+
+        if (idd > 125) {
+            editTextIdade.setError("Erro: Idade Inválida");
+            editTextIdade.requestFocus();
+            return;
+        }
+
+
+
         try
         {
             DatabaseTriagem db = new DatabaseTriagem(this);
@@ -38,7 +68,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
             db.close();
             Toast.makeText(ActivityNovaTriagem.this, "Paciente Guardado!", Toast.LENGTH_SHORT).show();
             editTextNomeUtente.setText("");
-            editTextNomeUtente.setText("");
+            editTextNumeroUtente.setText("");
             editTextIdade.setText("");
         }
             catch (SQLException e)
