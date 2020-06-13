@@ -113,4 +113,15 @@ public class DatabaseTriagem {
 
         return ourDatabase.update(DATABASE_TABLE, cv, KEY_NUMEROUTENTE + "=?", new String[]{NumeroUtente});
     }
+
+    /*Cursor readAllData(){
+        String query = "SELECT *FROM", + "TabelaPacientes";
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = null;
+        if(db != null){
+            db.rawQuery(query, null);
+        }
+        return cursor;
+    }*/
 }

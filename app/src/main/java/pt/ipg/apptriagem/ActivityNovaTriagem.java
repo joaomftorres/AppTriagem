@@ -31,20 +31,20 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         String idade = editTextIdade.getText().toString().trim();
 
         if (nome.length() == 0) {
-            editTextNomeUtente.setError("Erro: É necessário inserir o Nome do Utente");
+            editTextNomeUtente.setError(getString(R.string.erroNomeUtente));
             editTextNomeUtente.requestFocus();
             return;
         }
 
         if (numero_utente.length() != 9) {
-            editTextNumeroUtente.setError("Erro: O Numero de Utente deve ser contituido por 9 digitos");
+            editTextNumeroUtente.setError(getString(R.string.erroNumeroUtente));
             editTextNumeroUtente.requestFocus();
             return;
         }
 
 
         if (idade.length() == 0) {
-            editTextIdade.setError("Erro: Introduza a Idade");
+            editTextIdade.setError(getString(R.string.erroIntroduzirIdade));
             editTextIdade.requestFocus();
             return;
         }
@@ -53,7 +53,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         idd = Integer.parseInt(idade);
 
         if (idd > 125) {
-            editTextIdade.setError("Erro: Idade Inválida");
+            editTextIdade.setError(getString(R.string.erroIdadeInvalida));
             editTextIdade.requestFocus();
             return;
         }
