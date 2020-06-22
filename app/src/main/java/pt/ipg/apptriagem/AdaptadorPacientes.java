@@ -32,9 +32,7 @@ public class AdaptadorPacientes extends RecyclerView.Adapter<AdaptadorPacientes.
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            textViewLetra = itemView.findViewById(R.id.textViewLetra);
-            textViewNomePaciente = itemView.findViewById(R.id.textViewNomePaciente);
-            textViewUtente = itemView.findViewById(R.id.textViewUtente);
+
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override

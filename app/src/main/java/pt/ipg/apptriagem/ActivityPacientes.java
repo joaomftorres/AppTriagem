@@ -11,23 +11,14 @@ import android.widget.Toast;
 
 public class ActivityPacientes extends AppCompatActivity implements AdaptadorPacientes.ItemClicked {
 
-    /*TextView textViewDados;*/
-    RecyclerView RecyclerViewPacientes;
-    RecyclerView.Adapter myAdapter;
-    RecyclerView.LayoutManager layoutManager;
+    TextView textViewDados;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pacientes);
-
-        RecyclerViewPacientes = findViewById(R.id.RecyclerViewPacientes);
-        RecyclerViewPacientes.setHasFixedSize(true);
-
-        layoutManager = new LinearLayoutManager(this);
-        RecyclerViewPacientes.setLayoutManager(layoutManager);
-
-        };
+                };
 
     @Override
     public void onItemClicked(int index) {

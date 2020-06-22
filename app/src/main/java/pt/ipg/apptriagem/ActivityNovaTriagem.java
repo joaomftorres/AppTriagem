@@ -12,11 +12,14 @@ import android.widget.Toast;
 public class ActivityNovaTriagem extends AppCompatActivity {
 
     EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente;
+    DatabaseHelper db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova_triagem);
+
+        db = new DatabaseHelper(this);
 
         editTextNomeUtente = (EditText) findViewById(R.id.editTextNomeUtente);
         editTextIdade = (EditText) findViewById(R.id.editTextIdade);
@@ -60,7 +63,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
 
 
 
-        try
+        /*try
         {
             DatabaseTriagem db = new DatabaseTriagem(this);
             db.open();
@@ -74,6 +77,6 @@ public class ActivityNovaTriagem extends AppCompatActivity {
             catch (SQLException e)
             {
             Toast.makeText(ActivityNovaTriagem.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }
+            }*/
         }
 }
