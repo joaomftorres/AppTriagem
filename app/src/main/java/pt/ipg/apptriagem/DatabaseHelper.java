@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
 
-        db.execSQL(DataPaciente.CREATE_TABLE);
+        db.execSQL(Data.CREATE_TABLE);
         //db.execSQL(DataSintomas.CREATE_TABLE2);
 
     }
@@ -63,22 +63,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return notes;
     }
 
-    /*public int updateNote(Data note) {
+    public int updateNote(Data note) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put("Password", note.getPass());
+        values.put("Nome", note.getNome());
+        values.put("Numero de Utente", note.getNutente());
+        values.put("Idade", note.getIdade());
 
         // updating row
-        return db.update("HelloNew", values, "Id" + " = ?",
+        return db.update("Pacientes", values, "Id" + " = ?",
                 new String[]{String.valueOf(note.getId())});
-    }*/
+    }
 
 
-    /*public void deleteNote(Data note) {
+    public void deleteNote(Data note) {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete("HelloNew", "Id" + " = ?",
+        db.delete("Pacientes", "Id" + " = ?",
                 new String[]{String.valueOf(note.getId())});
         db.close();
-    }*/
+    }
 }
