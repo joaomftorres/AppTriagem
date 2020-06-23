@@ -1,12 +1,18 @@
 package pt.ipg.apptriagem;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,30 +21,88 @@ import java.util.List;
 
 public class ActivityPacientes extends AppCompatActivity {
 
-    private List<Data> notesList = new ArrayList<>();
-    private RecyclerView recyclerView;
-    DatabaseHelper db;
-    public static NotesAdapter mAdapter1;
+    DatabaseHelper mydb;
+    Button buttonVer;
+    Button buttonUpdate;
+    EditText editTextInserirID;
+    EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pacientes);
-        recyclerView = findViewById(R.id.recyclerview);
-        //where you use object of databasehelper (db)
-        //you have to initialize it.
-        db = new DatabaseHelper(this);
-        //get all data from database and store in list (noteslist)
-        //then pass to recyclerview.
 
-        notesList.addAll(db.getAllDataFromDb());
-        mAdapter1 = new NotesAdapter(this, notesList);
-        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerView.setLayoutManager(mLayoutManager);
-        recyclerView.setItemAnimator(new DefaultItemAnimator());
-        recyclerView.setAdapter(mAdapter1);
+        mydb = new DatabaseHelper(this);
+
+        editTextNomeUtente = (EditText) findViewById(R.id.editTextNomeUtente);
+        editTextIdade = (EditText) findViewById(R.id.editTextIdade);
+        editTextNumeroUtente = (EditText) findViewById(R.id.editTextNumeroUtente);
+        editTextInserirID = (EditText) findViewById(R.id.editTextInserirID);
+        buttonVer = (Button) findViewById(R.id.buttonVer);
+        buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
+        viewAll();
+        UpdateData();
+    }
+
+    public void UpdateData(){
+        buttonUpdate.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isUpdated = mydb.updateData(editTextInserirID.getText().toString(),
+                                editTextNomeUtente.getText().toString(),
+                                editTextIdade.getText().toString(),
+                                editTextNumeroUtente.getText().toString());
+                        if(isUpdated == true) {
+                            Toast.makeText(ActivityPacientes.this, "Dados Alterados",Toast.LENGTH_LONG).show();
+                        }
+                        else
+                            Toast.makeText(ActivityPacientes.this, "Falha na Alteração",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+    }
 
 
+    public void buttontriagem(View view) {
+
+        Intent intenttriagem = new Intent(this, ActivityTriagens.class);
+
+        startActivity(intenttriagem);
+    }
+
+    public void viewAll () {
+
+        buttonVer.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Cursor res = mydb.getAllData();
+                        if(res.getCount() == 0){
+                            showMessage("Erro", "Não existem dados");
+                            return;
+                        }
+                        StringBuffer buffer = new StringBuffer();
+                        while(res.moveToNext()){
+                            buffer.append("ID :"+ res.getString(0)+"\n");
+                            buffer.append("Nome :"+ res.getString(1)+"\n");
+                            buffer.append("Numero de Utente :"+ res.getString(2)+"\n");
+                            buffer.append("Idade :"+ res.getString(3)+"\n\n");
+                        }
+
+                        showMessage("Dados", buffer.toString());
+                    }
+                }
+        );
+    }
+
+    public void showMessage(String title, String message){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
     }
 }
 

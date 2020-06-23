@@ -6,24 +6,46 @@ import android.database.SQLException;
 import android.os.Bundle;
 import android.provider.ContactsContract;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
 public class ActivityNovaTriagem extends AppCompatActivity {
 
     EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente;
-    DatabaseHelper db;
+    DatabaseHelper mydb;
+    Button buttonSubmeterTriagem;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova_triagem);
 
-        db = new DatabaseHelper(this);
+        mydb = new DatabaseHelper(this);
 
         editTextNomeUtente = (EditText) findViewById(R.id.editTextNomeUtente);
         editTextIdade = (EditText) findViewById(R.id.editTextIdade);
         editTextNumeroUtente = (EditText) findViewById(R.id.editTextNumeroUtente);
+        buttonSubmeterTriagem = (Button) findViewById(R.id.buttonSubmeterTriagem);
+        AddData();
+    }
+
+    public void AddData(){
+        buttonSubmeterTriagem.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isInserted = mydb.insertData(editTextNomeUtente.getText().toString(),
+                                editTextNumeroUtente.getText().toString(),
+                                editTextIdade.getText().toString()
+                        );
+                        if(isInserted==true)
+                            Toast.makeText(ActivityNovaTriagem.this, "Guardado com Sucesso", Toast.LENGTH_SHORT).show();
+                        else
+                            Toast.makeText(ActivityNovaTriagem.this, "Não Guardado", Toast.LENGTH_SHORT).show();
+                    }
+                }
+        );
     }
 
 
