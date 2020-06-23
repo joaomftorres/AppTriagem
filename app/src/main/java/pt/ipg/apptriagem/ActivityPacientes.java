@@ -24,7 +24,8 @@ public class ActivityPacientes extends AppCompatActivity {
     DatabaseHelper mydb;
     Button buttonVer;
     Button buttonUpdate;
-    EditText editTextInserirID;
+    Button buttonDelete;
+    EditText editTextInserirID, editTextInserirID2;
     EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente;
 
 
@@ -39,10 +40,29 @@ public class ActivityPacientes extends AppCompatActivity {
         editTextIdade = (EditText) findViewById(R.id.editTextIdade);
         editTextNumeroUtente = (EditText) findViewById(R.id.editTextNumeroUtente);
         editTextInserirID = (EditText) findViewById(R.id.editTextInserirID);
+        editTextInserirID2 = (EditText) findViewById(R.id.editTextInserirID2);
         buttonVer = (Button) findViewById(R.id.buttonVer);
         buttonUpdate = (Button) findViewById(R.id.buttonUpdate);
+        buttonDelete = (Button) findViewById(R.id.buttonDelete);
         viewAll();
         UpdateData();
+        DeleteData();
+    }
+
+    public void DeleteData(){
+        buttonDelete.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Integer deletedRows = mydb.deleteData(editTextInserirID2.getText().toString());
+                        if (deletedRows > 0)
+                            Toast.makeText(ActivityPacientes.this, "Dados Eliminados",Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(ActivityPacientes.this, "Falha ao Eliminar",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+
     }
 
     public void UpdateData(){
@@ -91,7 +111,7 @@ public class ActivityPacientes extends AppCompatActivity {
                             buffer.append("Idade :"+ res.getString(3)+"\n\n");
                         }
 
-                        showMessage("Dados", buffer.toString());
+                        showMessage("Lista de Pacientes", buffer.toString());
                     }
                 }
         );
