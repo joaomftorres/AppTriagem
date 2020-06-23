@@ -35,7 +35,6 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-
                         boolean isInserted = mydb.insertData(editTextNomeUtente.getText().toString(),
                                 editTextNumeroUtente.getText().toString(),
                                 editTextIdade.getText().toString());
@@ -46,7 +45,13 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                             Toast.makeText(ActivityNovaTriagem.this, "Guardado com Sucesso", Toast.LENGTH_SHORT).show();
                         else
                             Toast.makeText(ActivityNovaTriagem.this, "Não Guardado", Toast.LENGTH_SHORT).show();
+
+                        editTextNumeroUtente.setText("");
+                        editTextIdade.setText("");
+                        editTextNomeUtente.setText("");
                     }
+
+
                 }
         );
 

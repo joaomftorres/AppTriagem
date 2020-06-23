@@ -53,7 +53,7 @@
             android:layout_width="230dp"
             android:layout_height="45dp"
             android:layout_marginTop="10dp"
-            android:layout_marginBottom="15dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/btnskin"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
@@ -70,56 +70,55 @@
 
         <EditText
             android:id="@+id/editTextNomeUtente"
-            android:layout_width="wrap_content"
+            android:layout_width="213dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="@string/textViewNome"
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editTextNumeroUtente"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.732"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textViewIDPaciente" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextInserirID" />
 
         <EditText
             android:id="@+id/editTextInserirID"
             android:layout_width="67dp"
             android:layout_height="41dp"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="10dp"
             android:ems="10"
             android:hint="@string/ID"
             android:inputType="number"
+            android:backgroundTint="@android:color/black"
+            android:textCursorDrawable="@null"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.072"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewIDPaciente" />
 
         <EditText
             android:id="@+id/editTextNumeroUtente"
-            android:layout_width="wrap_content"
+            android:layout_width="213dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="@string/textViewNumeroUtente"
             android:inputType="number"
-            app:layout_constraintBottom_toTopOf="@+id/editTextIdade"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/editTextInserirID"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextNomeUtente" />
 
         <EditText
             android:id="@+id/editTextIdade"
-            android:layout_width="wrap_content"
+            android:layout_width="213dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
             android:ems="10"
             android:hint="@string/editTextIdade"
             android:inputType="number"
-            app:layout_constraintBottom_toTopOf="@+id/textViewInfoEditar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.732"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextNumeroUtente" />
 
