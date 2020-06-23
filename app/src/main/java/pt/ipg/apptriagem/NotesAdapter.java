@@ -119,8 +119,8 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.MyViewHolder
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialogBox, int id) {
                         updateNote(inputNoteNome.getText().toString(),
-                                inputNoteNutente.getText().toString(),
-                                inputNoteIdade.getText().toString(),
+                            inputNoteNutente.getText().toString(),
+                            inputNoteIdade.getText().toString(),
                                 position);
                     }
                 })
