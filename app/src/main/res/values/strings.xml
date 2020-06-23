@@ -33,7 +33,7 @@
     <string name="erroIdadeInvalida">Erro: Idade Inválida</string>
     <string name="buttonVer">Lista de Pacientes</string>
     <string name="buttonUpdate">Editar Paciente</string>
-    <string name="textViewIDPaciente">ID do paciente que quer editar:</string>
+    <string name="textViewIDPaciente">Editar Informações de um Paciente</string>
     <string name="editTextInserirID">Insira o ID do Paciente a editar</string>
 
 
