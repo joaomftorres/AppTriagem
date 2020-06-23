@@ -35,10 +35,13 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                 new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+
                         boolean isInserted = mydb.insertData(editTextNomeUtente.getText().toString(),
                                 editTextNumeroUtente.getText().toString(),
-                                editTextIdade.getText().toString()
-                        );
+                                editTextIdade.getText().toString());
+
+                        validacao();
+
                         if(isInserted==true)
                             Toast.makeText(ActivityNovaTriagem.this, "Guardado com Sucesso", Toast.LENGTH_SHORT).show();
                         else
@@ -46,43 +49,40 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                     }
                 }
         );
+
     }
 
 
-    public void buttonSubmeterTriagem(View v)
-    {
-        String nome = editTextNomeUtente.getText().toString().trim();
-        String numero_utente = editTextNumeroUtente.getText().toString().trim();
-        String idade = editTextIdade.getText().toString().trim();
+        public void validacao() {
+            if (editTextNomeUtente.length() == 0) {
+                editTextNomeUtente.setError(getString(R.string.erroNomeUtente));
+                editTextNomeUtente.requestFocus();
+                return;
+            }
 
-        if (nome.length() == 0) {
-            editTextNomeUtente.setError(getString(R.string.erroNomeUtente));
-            editTextNomeUtente.requestFocus();
-            return;
+            if (editTextNumeroUtente.length() != 9) {
+                editTextNumeroUtente.setError(getString(R.string.erroNumeroUtente));
+                editTextNumeroUtente.requestFocus();
+                return;
+            }
+
+
+            String idade = editTextIdade.getText().toString().trim();
+            if (editTextIdade.length() == 0) {
+                editTextIdade.setError(getString(R.string.erroIntroduzirIdade));
+                editTextIdade.requestFocus();
+                return;
+            }
+
+            int idd;
+            idd = Integer.parseInt(idade);
+
+            if (idd > 125) {
+                editTextIdade.setError(getString(R.string.erroIdadeInvalida));
+                editTextIdade.requestFocus();
+                return;
+            }
         }
-
-        if (numero_utente.length() != 9) {
-            editTextNumeroUtente.setError(getString(R.string.erroNumeroUtente));
-            editTextNumeroUtente.requestFocus();
-            return;
-        }
-
-
-        if (idade.length() == 0) {
-            editTextIdade.setError(getString(R.string.erroIntroduzirIdade));
-            editTextIdade.requestFocus();
-            return;
-        }
-
-        int idd;
-        idd = Integer.parseInt(idade);
-
-        if (idd > 125) {
-            editTextIdade.setError(getString(R.string.erroIdadeInvalida));
-            editTextIdade.requestFocus();
-            return;
-        }
-
 
 
         /*try
@@ -100,5 +100,5 @@ public class ActivityNovaTriagem extends AppCompatActivity {
             {
             Toast.makeText(ActivityNovaTriagem.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }*/
-        }
+
 }

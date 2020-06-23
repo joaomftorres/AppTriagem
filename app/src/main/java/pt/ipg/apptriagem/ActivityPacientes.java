@@ -37,8 +37,8 @@ public class ActivityPacientes extends AppCompatActivity {
         mydb = new DatabaseHelper(this);
 
         editTextNomeUtente = (EditText) findViewById(R.id.editTextNomeUtente);
-        editTextIdade = (EditText) findViewById(R.id.editTextIdade);
         editTextNumeroUtente = (EditText) findViewById(R.id.editTextNumeroUtente);
+        editTextIdade = (EditText) findViewById(R.id.editTextIdade);
         editTextInserirID = (EditText) findViewById(R.id.editTextInserirID);
         editTextInserirID2 = (EditText) findViewById(R.id.editTextInserirID2);
         buttonVer = (Button) findViewById(R.id.buttonVer);

@@ -35,8 +35,10 @@
     <string name="buttonUpdate">Editar Paciente</string>
     <string name="textViewIDPaciente">Editar Informações de um Paciente</string>
     <string name="editTextInserirID">Insira o ID do Paciente a editar</string>
-
-
+    <string name="ID">ID</string>
+    <string name="textViewInfoEditar">Indique o ID do paciente que pretende editar e preencha os campos</string>
+    <string name="textViewEliminarPaciente">Eliminar Pacientes</string>
+    <string name="textViewEliminarInfo">Indique o ID do paciente que pretende eliminar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
