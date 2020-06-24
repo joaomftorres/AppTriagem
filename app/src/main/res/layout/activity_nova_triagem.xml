@@ -20,7 +20,6 @@
 
             android:layout_width="230dp"
             android:layout_height="45dp"
-            android:layout_marginTop="20dp"
             android:layout_marginBottom="14dp"
             android:background="@drawable/btnskin"
             android:hint="@string/buttontriagem"
@@ -35,106 +34,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/checkBoxOlfato" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <CheckBox
-            android:id="@+id/checkBoxDificuldadeRespiratoria"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="275dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxDificuldadeRespiratoria"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/checkBoxTossePersistente"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="314dp"
-            android:buttonTint="@android:color/black"
-            android:checked="false"
-            android:text="@string/checkBoxTossePersistente"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/checkBoxFebre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="356dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxFebre"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/checkBoxDoresMusculares"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="395dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxDoresMusculares"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-
-        <CheckBox
-            android:id="@+id/checkBoxDoresCabeça"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="434dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxDoresCabeça"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/checkBoxTremores"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="472dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxTremores"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/checkBoxArrepios"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="508dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxArrepios"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <CheckBox
-            android:id="@+id/checkBoxGarganta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="546dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxGarganta"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <CheckBox
             android:id="@+id/checkBoxOlfato"
@@ -195,6 +96,18 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextNomeUtente" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="66dp"
+            android:layout_marginLeft="66dp"
+            android:layout_marginTop="318dp"
+            android:ems="10"
+            android:inputType="date"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textViewNumeroUtente"
@@ -267,11 +180,14 @@
             android:id="@+id/textViewSintomas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="236dp"
+            android:layout_marginTop="20dp"
             android:text="@string/textViewSintomas"
+            android:textSize="18sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_bias="0.516"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextIdade" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

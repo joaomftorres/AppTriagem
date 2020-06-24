@@ -14,6 +14,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "covid.db";
     private static final String TABLE_NAME = "Pacientes_table";
+    private static final String TABLE_NAME2 = "Sintomas_table";
     private static final String COL_1 = "ID";
     private static final String COL_2 = "NOME";
     private static final String COL_3 = "NUMEROUTENTE";
