@@ -6,20 +6,19 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.sql.SQLInput;
-import java.util.ArrayList;
-import java.util.List;
+import java.text.SimpleDateFormat;
+
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "covid.db";
     private static final String TABLE_NAME = "Pacientes_table";
-    private static final String TABLE_NAME2 = "Sintomas_table";
     private static final String COL_1 = "ID";
     private static final String COL_2 = "NOME";
     private static final String COL_3 = "NUMEROUTENTE";
     private static final String COL_4 = "IDADE";
     private static final String COL_5 = "SINTOMAS";
+    private static final String COL_6 = "DATA";
 
 
     public DatabaseHelper(Context context) {
@@ -29,27 +28,24 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String Pacientes_table = "create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, NOME TEXT, NUMEROUTENTE TEXT, IDADE INTEGER, SINTOMAS TEXT)";
+        String Pacientes_table = "create table " + TABLE_NAME +" (ID INTEGER PRIMARY KEY AUTOINCREMENT, NOME TEXT, NUMEROUTENTE TEXT, IDADE INTEGER, SINTOMAS TEXT, DATA TEXT)";
         db.execSQL(Pacientes_table);
-
-        /*String Sintomas_table = "create table " + TABLE_NAME2 +" (SINTOMAS TEXT)";
-        db.execSQL(Sintomas_table);*/
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME);
-        //db.execSQL("DROP TABLE IF EXISTS "+TABLE_NAME2);
         onCreate(db);
     }
 
-    public boolean insertData(String nome, String nutente, String idade, String sintomas) {
+    public boolean insertData(String nome, String nutente, String idade, String sintomas, String data) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put(COL_2, nome);
         contentValues.put(COL_3, nutente);
         contentValues.put(COL_4, idade);
         contentValues.put(COL_5, sintomas);
+        contentValues.put(COL_6, data);
 
         long result = db.insert(TABLE_NAME, null, contentValues);
 
@@ -59,6 +55,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return true;
         }
     }
+
 
     /*public boolean insertDataSintoma(String sintomas){
         SQLiteDatabase db = this.getWritableDatabase();

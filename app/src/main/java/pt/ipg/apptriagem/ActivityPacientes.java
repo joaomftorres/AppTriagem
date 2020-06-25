@@ -108,7 +108,7 @@ public class ActivityPacientes extends AppCompatActivity {
                             buffer.append("ID :"+ res.getString(0)+"\n");
                             buffer.append("Nome :"+ res.getString(1)+"\n");
                             buffer.append("Numero de Utente :"+ res.getString(2)+"\n");
-                            buffer.append("Idade :"+ res.getString(3)+"\n\n");
+                            buffer.append("Data de Nascimento :"+ res.getString(3)+"\n\n");
                         }
 
                         showMessage("Lista de Pacientes", buffer.toString());

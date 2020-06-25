@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.view.View;
 import android.widget.Button;
 
@@ -57,9 +56,10 @@ public class ActivityTriagens extends AppCompatActivity {
                         while(res.moveToNext()){
                             buffer.append("ID :"+ res.getString(0)+"\n");
                             buffer.append("Nome :"+ res.getString(1)+"\n");
-                            buffer.append("Numero de Utente :"+ res.getString(2)+"\n");
-                            buffer.append("Idade :"+ res.getString(3)+"\n");
-                            buffer.append("Sintomas :"+ res.getString(4)+"\n\n");
+                            buffer.append("Numero de Utente: "+ res.getString(2)+"\n");
+                            buffer.append("Data de Nascimento :"+ res.getString(3)+"\n\n");
+                            buffer.append("Data da Triagem :"+ res.getString(5)+"\n");
+                            buffer.append("Sintomas :"+ res.getString(4)+"\n\n-----------------------------------------------------------------------\n\n");
                         }
 
                         showMessage("Resultados das Triagens", buffer.toString());

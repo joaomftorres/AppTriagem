@@ -12,10 +12,10 @@ import android.widget.Toast;
 
 public class ActivityNovaTriagem extends AppCompatActivity {
 
-    EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente, editTextSintomas;
+    EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente, editTextSintomas, editTextData;
     DatabaseHelper mydb;
     Button buttonSubmeterTriagem;
-    Button buttonAdicionarSintoma;
+    //Button buttonAdicionarSintoma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +27,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         editTextNomeUtente = (EditText) findViewById(R.id.editTextNomeUtente);
         editTextIdade = (EditText) findViewById(R.id.editTextIdade);
         editTextNumeroUtente = (EditText) findViewById(R.id.editTextNumeroUtente);
+        editTextData = (EditText) findViewById(R.id.editTextData);
         buttonSubmeterTriagem = (Button) findViewById(R.id.buttonSubmeterTriagem);
 
 
@@ -67,19 +68,20 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                         boolean isInserted = mydb.insertData(editTextNomeUtente.getText().toString(),
                                 editTextNumeroUtente.getText().toString(),
                                 editTextIdade.getText().toString(),
-                                editTextSintomas.getText().toString());
+                                editTextSintomas.getText().toString(),
+                                editTextData.getText().toString()
+                        );
 
 
-                        if(isInserted==true) {
+
                             Toast.makeText(ActivityNovaTriagem.this, "Guardado com Sucesso", Toast.LENGTH_SHORT).show();
-                        }else {
-                            Toast.makeText(ActivityNovaTriagem.this, "Não Guardado", Toast.LENGTH_SHORT).show();
-                        }
-                        
+
+
                         editTextNumeroUtente.setText("");
                         editTextIdade.setText("");
                         editTextNomeUtente.setText("");
                         editTextSintomas.setText("");
+                        editTextData.setText("");
 
                     }
 

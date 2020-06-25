@@ -20,8 +20,6 @@ import java.util.ArrayList;
 
 public class ConsultaActivity extends AppCompatActivity {
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

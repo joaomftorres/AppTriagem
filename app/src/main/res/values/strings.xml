@@ -19,7 +19,7 @@
     <string name="editTextNumeroUtente">Insira o Numero do Utente</string>
     <string name="editTextIdade">Idade</string>
     <string name="textViewNome">Nome</string>
-    <string name="textViewIdade">Idade</string>
+    <string name="textViewIdade">Data de Nascimento</string>
     <string name="textViewDadosPessoais">Dados Pessoais</string>
     <string name="checkBoxTremores">Tremores</string>
     <string name="checkBoxArrepios">Arrepios</string>

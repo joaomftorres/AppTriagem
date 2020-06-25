@@ -20,11 +20,10 @@
 
             android:layout_width="230dp"
             android:layout_height="45dp"
-            android:layout_marginTop="414dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginTop="25dp"
+            android:layout_marginBottom="35dp"
             android:background="@drawable/btnskin"
             android:hint="@string/buttontriagem"
-            android:onClick="buttonSubmeterTriagem"
             android:shadowColor="#A8A8A8"
             android:shadowDx="0"
             android:shadowDy="0"
@@ -36,8 +35,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toBottomOf="@+id/editTextData" />
 
         <EditText
             android:id="@+id/editTextNomeUtente"
@@ -56,25 +54,9 @@
             app:layout_constraintTop_toBottomOf="@+id/textViewDadosPessoais" />
 
         <EditText
-            android:id="@+id/editTextIdade"
-            android:layout_width="50dp"
-            android:layout_height="35dp"
-            android:layout_marginStart="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginTop="4dp"
-            android:backgroundTint="@android:color/black"
-            android:ems="10"
-            android:hint="@string/editTextIdade"
-            android:inputType="number"
-            android:textCursorDrawable="@null"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editTextNumeroUtente" />
-
-        <EditText
             android:id="@+id/editTextNumeroUtente"
-            android:layout_width="207dp"
-            android:layout_height="35dp"
+            android:layout_width="232dp"
+            android:layout_height="36dp"
             android:layout_marginStart="100dp"
             android:layout_marginLeft="100dp"
             android:layout_marginTop="4dp"
@@ -91,14 +73,47 @@
             android:id="@+id/editTextSintomas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="@android:color/black"
             android:ems="10"
+            android:gravity="center"
             android:hint="@string/editTextSintomas"
             android:inputType="textPersonName"
+            android:textCursorDrawable="@null"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.545"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewSintomas" />
+
+        <EditText
+            android:id="@+id/editTextIdade"
+            android:layout_width="145dp"
+            android:layout_height="37dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="@android:color/black"
+            android:ems="10"
+            android:hint="@string/textViewIdade"
+            android:inputType="date"
+            android:textCursorDrawable="@null"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@+id/textViewIdade"
+            app:layout_constraintTop_toBottomOf="@+id/editTextNumeroUtente" />
+
+        <EditText
+            android:id="@+id/editTextData"
+            android:layout_width="138dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="15dp"
+            android:ems="10"
+            android:hint="@string/textViewData"
+            android:inputType="date"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textViewData"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSintomas" />
 
         <TextView
             android:id="@+id/textViewNumeroUtente"
@@ -131,11 +146,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="37dp"
             android:layout_marginLeft="37dp"
-            android:layout_marginTop="18dp"
+            android:layout_marginTop="22dp"
             android:text="@string/textViewIdade"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/textViewNumeroUtente"
-            app:layout_constraintHorizontal_bias="0.454"
+            app:layout_constraintHorizontal_bias="0.196"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textViewNumeroUtente" />
 
@@ -171,14 +186,25 @@
             android:id="@+id/textViewSintomas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="88dp"
+            android:layout_marginTop="29dp"
             android:text="@string/textViewSintomas"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/editTextIdade" />
+
+        <TextView
+            android:id="@+id/textViewData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/textViewData"
+            app:layout_constraintEnd_toStartOf="@+id/editTextData"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSintomas" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
