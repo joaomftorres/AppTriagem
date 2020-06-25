@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 public class ActivityNovaTriagem extends AppCompatActivity {
 
-    EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente;
+    EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente, editTextSintomas;
     DatabaseHelper mydb;
     Button buttonSubmeterTriagem;
+    Button buttonAdicionarSintoma;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,8 +28,36 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         editTextIdade = (EditText) findViewById(R.id.editTextIdade);
         editTextNumeroUtente = (EditText) findViewById(R.id.editTextNumeroUtente);
         buttonSubmeterTriagem = (Button) findViewById(R.id.buttonSubmeterTriagem);
+
+
+        editTextSintomas = (EditText) findViewById(R.id.editTextSintomas);
+        /*buttonAdicionarSintoma = (Button) findViewById(R.id.buttonAdicionarSintoma);
+        buttonAdicionarSintoma.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String newEntry = editTextSintomas.getText().toString();
+                if(editTextSintomas.length() != 0){
+                    insertDataSintoma(newEntry);
+                    editTextSintomas.setText("");
+                } else{
+                    Toast.makeText(ActivityNovaTriagem.this, "Insira um sintoma", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });*/
+
         AddData();
+
     }
+
+    /*public void insertDataSintoma(String newEntry){
+        boolean insertData = mydb.insertDataSintoma(newEntry);
+
+        if(insertData == true){
+            Toast.makeText(ActivityNovaTriagem.this, "Sintoma Inserido", Toast.LENGTH_LONG).show();
+        } else{
+            Toast.makeText(ActivityNovaTriagem.this, "Erro ao Inserir Sintoma", Toast.LENGTH_LONG).show();
+        }
+    }*/
 
     public void AddData(){
         buttonSubmeterTriagem.setOnClickListener(
@@ -37,18 +66,21 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                     public void onClick(View v) {
                         boolean isInserted = mydb.insertData(editTextNomeUtente.getText().toString(),
                                 editTextNumeroUtente.getText().toString(),
-                                editTextIdade.getText().toString());
+                                editTextIdade.getText().toString(),
+                                editTextSintomas.getText().toString());
 
-                        validacao();
 
-                        if(isInserted==true)
+                        if(isInserted==true) {
                             Toast.makeText(ActivityNovaTriagem.this, "Guardado com Sucesso", Toast.LENGTH_SHORT).show();
-                        else
+                        }else {
                             Toast.makeText(ActivityNovaTriagem.this, "Não Guardado", Toast.LENGTH_SHORT).show();
-
+                        }
+                        
                         editTextNumeroUtente.setText("");
                         editTextIdade.setText("");
                         editTextNomeUtente.setText("");
+                        editTextSintomas.setText("");
+
                     }
 
 
@@ -58,7 +90,9 @@ public class ActivityNovaTriagem extends AppCompatActivity {
     }
 
 
-        public void validacao() {
+
+
+        /*public void validacao() {
             if (editTextNomeUtente.length() == 0) {
                 editTextNomeUtente.setError(getString(R.string.erroNomeUtente));
                 editTextNomeUtente.requestFocus();
@@ -87,7 +121,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                 editTextIdade.requestFocus();
                 return;
             }
-        }
+        }*/
 
 
         /*try

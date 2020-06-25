@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         mydb = new DatabaseHelper(this);
 
         buttonpacientes = (Button) findViewById(R.id.buttonpacientes);
-        //viewAll();
+
     }
 
     public void buttontriagem(View view) {
@@ -40,36 +40,5 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentpacientes);
     }
 
-    /*public void viewAll () {
 
-        buttonpacientes.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        Cursor res = mydb.getAllData();
-                        if(res.getCount() == 0){
-                            showMessage("Erro", "Não existem dados");
-                            return;
-                        }
-                        StringBuffer buffer = new StringBuffer();
-                        while(res.moveToNext()){
-                            buffer.append("ID :"+ res.getString(0)+"\n");
-                            buffer.append("Nome :"+ res.getString(1)+"\n");
-                            buffer.append("Numero de Utente :"+ res.getString(2)+"\n");
-                            buffer.append("Idade :"+ res.getString(3)+"\n\n");
-                        }
-
-                        showMessage("Dados", buffer.toString());
-                    }
-                }
-        );
-    }
-
-    public void showMessage(String title, String message){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setCancelable(true);
-        builder.setTitle(title);
-        builder.setMessage(message);
-        builder.show();
-    }*/
 }

@@ -20,7 +20,8 @@
 
             android:layout_width="230dp"
             android:layout_height="45dp"
-            android:layout_marginBottom="14dp"
+            android:layout_marginTop="414dp"
+            android:layout_marginBottom="30dp"
             android:background="@drawable/btnskin"
             android:hint="@string/buttontriagem"
             android:onClick="buttonSubmeterTriagem"
@@ -34,20 +35,9 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent" />
-
-
-        <CheckBox
-            android:id="@+id/checkBoxOlfato"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="584dp"
-            android:buttonTint="@android:color/black"
-            android:text="@string/checkBoxOlfato"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
 
         <EditText
             android:id="@+id/editTextNomeUtente"
@@ -98,16 +88,17 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextNomeUtente" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editTextSintomas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="66dp"
-            android:layout_marginLeft="66dp"
-            android:layout_marginTop="318dp"
+            android:layout_marginTop="36dp"
             android:ems="10"
-            android:inputType="date"
+            android:hint="@string/editTextSintomas"
+            android:inputType="textPersonName"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.545"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/textViewSintomas" />
 
         <TextView
             android:id="@+id/textViewNumeroUtente"
@@ -180,7 +171,7 @@
             android:id="@+id/textViewSintomas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="88dp"
             android:text="@string/textViewSintomas"
             android:textSize="18sp"
             android:textStyle="bold"

@@ -33,22 +33,18 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/buttonconsultartriagem"
+            android:id="@+id/buttonconsultar"
             android:layout_width="260dp"
             android:layout_height="45dp"
-            android:layout_marginTop="380dp"
+            android:layout_marginTop="18dp"
             android:background="@drawable/btnskin"
-            android:shadowColor="#A8A8A8"
-            android:shadowDx="0"
-            android:shadowDy="0"
-            android:shadowRadius="5"
-            android:text="@string/buttonconsultartriagem"
+            android:text="@string/buttonconsultar"
             android:textColor="#FFFFFF"
             android:textSize="22sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
         <ImageView
             android:id="@+id/imageView"

@@ -39,6 +39,10 @@
     <string name="textViewInfoEditar">Indique o ID do paciente que pretende editar e preencha os campos</string>
     <string name="textViewEliminarPaciente">Eliminar Pacientes</string>
     <string name="textViewEliminarInfo">Indique o ID do paciente que pretende eliminar</string>
+    <string name="textViewData">Data da Triagem</string>
+    <string name="buttonconsultar">Consultar Triagem</string>
+    <string name="editTextSintomas">Introduza os Sintomas</string>
+    <string name="buttonAdicionarSintoma">Adicionar</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
