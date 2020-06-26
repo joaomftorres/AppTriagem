@@ -1,10 +1,16 @@
 package pt.ipg.apptriagem;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.database.SQLException;
 import android.os.Bundle;
 import android.provider.ContactsContract;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,8 +35,6 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         editTextNumeroUtente = (EditText) findViewById(R.id.editTextNumeroUtente);
         editTextData = (EditText) findViewById(R.id.editTextData);
         buttonSubmeterTriagem = (Button) findViewById(R.id.buttonSubmeterTriagem);
-
-
         editTextSintomas = (EditText) findViewById(R.id.editTextSintomas);
         /*buttonAdicionarSintoma = (Button) findViewById(R.id.buttonAdicionarSintoma);
         buttonAdicionarSintoma.setOnClickListener(new View.OnClickListener() {
@@ -46,9 +50,59 @@ public class ActivityNovaTriagem extends AppCompatActivity {
             }
         });*/
 
+        /*editTextNomeUtente.addTextChangedListener(buttonTextWatcher);
+        editTextNumeroUtente.addTextChangedListener(buttonTextWatcher);
+        editTextIdade.addTextChangedListener(buttonTextWatcher);
+        //editTextSintomas.addTextChangedListener(buttonTextWatcher);
+        editTextData.addTextChangedListener(buttonTextWatcher);*/
+
+
         AddData();
 
+
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.sair:
+                moveTaskToBack(true);
+                android.os.Process.killProcess(android.os.Process.myPid());
+                System.exit(1);
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    /*private TextWatcher buttonTextWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            String nome = editTextNomeUtente.getText().toString().trim();
+            String numero = editTextNumeroUtente.getText().toString().trim();
+            String datan = editTextIdade.getText().toString().trim();
+            //String sintomas = editTextSintomas.getText().toString().trim();
+            String datat = editTextData.getText().toString().trim();
+
+            buttonSubmeterTriagem.setEnabled(!nome.isEmpty() && !numero.isEmpty() && !datan.isEmpty() && datat.isEmpty());
+
+        }
+
+        @Override
+        public void afterTextChanged(Editable s) {
+
+        }
+    };*/
 
     /*public void insertDataSintoma(String newEntry){
         boolean insertData = mydb.insertDataSintoma(newEntry);
@@ -94,7 +148,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
 
 
 
-        /*public void validacao() {
+        public void validacao() {
             if (editTextNomeUtente.length() == 0) {
                 editTextNomeUtente.setError(getString(R.string.erroNomeUtente));
                 editTextNomeUtente.requestFocus();
@@ -114,16 +168,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                 editTextIdade.requestFocus();
                 return;
             }
-
-            int idd;
-            idd = Integer.parseInt(idade);
-
-            if (idd > 125) {
-                editTextIdade.setError(getString(R.string.erroIdadeInvalida));
-                editTextIdade.requestFocus();
-                return;
-            }
-        }*/
+        }
 
 
         /*try

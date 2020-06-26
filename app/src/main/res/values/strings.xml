@@ -30,7 +30,7 @@
     <string name="erroNomeUtente">Erro: É necessário inserir o Nome do Utente</string>
     <string name="erroNumeroUtente">Erro: O Numero de Utente deve ser contituido por 9 digitos</string>
     <string name="erroIntroduzirIdade">Erro: Introduza a Idade</string>
-    <string name="erroIdadeInvalida">Erro: Idade Inválida</string>
+    <string name="erroIdadeInvalida">Erro: Data de Nascimento Inválida</string>
     <string name="buttonVer">Lista de Pacientes</string>
     <string name="buttonUpdate">Editar Paciente</string>
     <string name="textViewIDPaciente">Editar Informações de um Paciente</string>
