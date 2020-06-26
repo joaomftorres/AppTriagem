@@ -3,9 +3,7 @@ package pt.ipg.apptriagem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.database.SQLException;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.Menu;
@@ -21,7 +19,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
     EditText editTextNomeUtente, editTextIdade, editTextNumeroUtente, editTextSintomas, editTextData;
     DatabaseHelper mydb;
     Button buttonSubmeterTriagem;
-    //Button buttonAdicionarSintoma;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,31 +34,36 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         editTextData = (EditText) findViewById(R.id.editTextData);
         buttonSubmeterTriagem = (Button) findViewById(R.id.buttonSubmeterTriagem);
         editTextSintomas = (EditText) findViewById(R.id.editTextSintomas);
-        /*buttonAdicionarSintoma = (Button) findViewById(R.id.buttonAdicionarSintoma);
-        buttonAdicionarSintoma.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String newEntry = editTextSintomas.getText().toString();
-                if(editTextSintomas.length() != 0){
-                    insertDataSintoma(newEntry);
-                    editTextSintomas.setText("");
-                } else{
-                    Toast.makeText(ActivityNovaTriagem.this, "Insira um sintoma", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });*/
 
-        /*editTextNomeUtente.addTextChangedListener(buttonTextWatcher);
-        editTextNumeroUtente.addTextChangedListener(buttonTextWatcher);
-        editTextIdade.addTextChangedListener(buttonTextWatcher);
-        //editTextSintomas.addTextChangedListener(buttonTextWatcher);
-        editTextData.addTextChangedListener(buttonTextWatcher);*/
 
+        editTextNomeUtente.addTextChangedListener(textWatcher);
+        editTextNumeroUtente.addTextChangedListener(textWatcher);
+        editTextIdade.addTextChangedListener(textWatcher);
+        editTextData.addTextChangedListener(textWatcher);
+
+        checkFieldsForEmptyValues();
 
         AddData();
 
-
     }
+
+    private TextWatcher textWatcher = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3)
+        {
+
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int i, int i2, int i3) {
+            checkFieldsForEmptyValues();
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+
+        }
+    };
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -80,39 +83,7 @@ public class ActivityNovaTriagem extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /*private TextWatcher buttonTextWatcher = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            String nome = editTextNomeUtente.getText().toString().trim();
-            String numero = editTextNumeroUtente.getText().toString().trim();
-            String datan = editTextIdade.getText().toString().trim();
-            //String sintomas = editTextSintomas.getText().toString().trim();
-            String datat = editTextData.getText().toString().trim();
-
-            buttonSubmeterTriagem.setEnabled(!nome.isEmpty() && !numero.isEmpty() && !datan.isEmpty() && datat.isEmpty());
-
-        }
-
-        @Override
-        public void afterTextChanged(Editable s) {
-
-        }
-    };*/
-
-    /*public void insertDataSintoma(String newEntry){
-        boolean insertData = mydb.insertDataSintoma(newEntry);
-
-        if(insertData == true){
-            Toast.makeText(ActivityNovaTriagem.this, "Sintoma Inserido", Toast.LENGTH_LONG).show();
-        } else{
-            Toast.makeText(ActivityNovaTriagem.this, "Erro ao Inserir Sintoma", Toast.LENGTH_LONG).show();
-        }
-    }*/
 
     public void AddData(){
         buttonSubmeterTriagem.setOnClickListener(
@@ -127,8 +98,10 @@ public class ActivityNovaTriagem extends AppCompatActivity {
                         );
 
 
+                        if(isInserted == true)
+                            Toast.makeText(ActivityNovaTriagem.this,"Triagem guardada com sucesso!",Toast.LENGTH_LONG).show();
 
-                            Toast.makeText(ActivityNovaTriagem.this, "Guardado com Sucesso", Toast.LENGTH_SHORT).show();
+
 
 
                         editTextNumeroUtente.setText("");
@@ -145,46 +118,62 @@ public class ActivityNovaTriagem extends AppCompatActivity {
 
     }
 
+    private  void checkFieldsForEmptyValues(){
+        Button button = (Button) findViewById(R.id.buttonSubmeterTriagem);
 
+        String s1 = editTextNomeUtente.getText().toString();
+        String s2 = editTextNumeroUtente.getText().toString();
+        String s3 = editTextIdade.getText().toString();
+        String s4 = editTextData.getText().toString();
 
+        if(s1.equals("") || s3.equals("") || s2.length() < 9 || s4.equals("")) {
+            button.setEnabled(false);
 
-        public void validacao() {
-            if (editTextNomeUtente.length() == 0) {
-                editTextNomeUtente.setError(getString(R.string.erroNomeUtente));
-                editTextNomeUtente.requestFocus();
-                return;
-            }
+            editTextIdade.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ActivityNovaTriagem.this, "Deve Introduzir a Data de Nascimento do Paciente", Toast.LENGTH_SHORT).show();
+                }
+            });
 
-            if (editTextNumeroUtente.length() != 9) {
-                editTextNumeroUtente.setError(getString(R.string.erroNumeroUtente));
-                editTextNumeroUtente.requestFocus();
-                return;
-            }
+            editTextNomeUtente.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ActivityNovaTriagem.this, "Deve Introduzir o Nome do Paciente", Toast.LENGTH_SHORT).show();
+                }
+            });
 
+            editTextNumeroUtente.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ActivityNovaTriagem.this, "Deve confirmar se o Numero de Utente que introduziu tem 9 digitos!", Toast.LENGTH_SHORT).show();
+                }
+            });
 
-            String idade = editTextIdade.getText().toString().trim();
-            if (editTextIdade.length() == 0) {
-                editTextIdade.setError(getString(R.string.erroIntroduzirIdade));
-                editTextIdade.requestFocus();
-                return;
-            }
+            editTextData.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ActivityNovaTriagem.this, "Indique em que dia esta triagem foi feita.", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            editTextSintomas.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(ActivityNovaTriagem.this, "Indique os Sintomas do Utente. Se não quiser introduzir Sintomas pode deixar este opção em branco.", Toast.LENGTH_SHORT).show();
+                }
+            });
+
         }
 
 
-        /*try
+        else
         {
-            DatabaseTriagem db = new DatabaseTriagem(this);
-            db.open();
-            db.createEntry(nome, numero_utente, idade);
-            db.close();
-            Toast.makeText(ActivityNovaTriagem.this, "Paciente Guardado!", Toast.LENGTH_SHORT).show();
-            editTextNomeUtente.setText("");
-            editTextNumeroUtente.setText("");
-            editTextIdade.setText("");
+            button.setEnabled(true);
         }
-            catch (SQLException e)
-            {
-            Toast.makeText(ActivityNovaTriagem.this, e.getMessage(), Toast.LENGTH_SHORT).show();
-            }*/
+    }
 
 }
+
+
+

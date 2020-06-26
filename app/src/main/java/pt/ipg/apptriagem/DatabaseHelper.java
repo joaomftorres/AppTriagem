@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.text.SimpleDateFormat;
+
 
 
 public class DatabaseHelper extends SQLiteOpenHelper {
@@ -57,33 +57,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
 
-    /*public boolean insertDataSintoma(String sintomas){
-        SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues contentValues1 = new ContentValues();
-        contentValues1.put(SINTOMAS, sintomas);
-
-        long result = db.insert(TABLE_NAME2, null, contentValues1);
-
-        if(result==1){
-            return false;
-        }else{
-            return true;
-        }
-
-    }*/
 
     public Cursor getAllData(){
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery("select * from "+ TABLE_NAME , null);
         return res;
     }
-
-    /*public Cursor getDataSintomas(){
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor sint = db.rawQuery("select * from "+ TABLE_NAME2, null);
-        return sint;
-    }*/
-
 
 
 

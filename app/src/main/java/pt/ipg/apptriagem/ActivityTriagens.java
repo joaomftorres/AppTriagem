@@ -26,13 +26,6 @@ public class ActivityTriagens extends AppCompatActivity {
 
         mydb = new DatabaseHelper(this);
         viewAll();
-        /*buttonconsultar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(ActivityTriagens.this, ConsultaActivity.class);
-                startActivity(intent);
-            }
-        });*/
 
 
 
